@@ -31,6 +31,7 @@ dependencies {
     testImplementation librarys.junit
     androidTestImplementation librarys.junitTest
     androidTestImplementation librarys.espressoTest
+
     api librarys.ormliteAndroid
     api librarys.ormliteCore
 }

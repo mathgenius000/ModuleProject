@@ -30,6 +30,10 @@ ext {
             recyclerview    : 'androidx.recyclerview:recyclerview:1.2.0-alpha05',
             glide           : 'com.github.bumptech.glide:glide:4.11.0',
             ormliteAndroid  : 'com.j256.ormlite:ormlite-android:5.1',
-            ormliteCore     : 'com.j256.ormlite:ormlite-core:5.1'
+            ormliteCore     : 'com.j256.ormlite:ormlite-core:5.1',
+
+            okgo            : 'com.lzy.net:okgo:3.0.4',
+            okrx2           : 'com.lzy.net:okrx2:2.0.2',
+            okserver        : 'com.lzy.net:okserver:2.0.5'
     ]
 }

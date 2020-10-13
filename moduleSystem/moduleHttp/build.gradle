@@ -32,4 +32,7 @@ dependencies {
     androidTestImplementation librarys.junitTest
     androidTestImplementation librarys.espressoTest
 
+    api librarys.okgo
+    api librarys.okrx2
+    api librarys.okserver
 }

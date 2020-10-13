@@ -32,5 +32,6 @@ dependencies {
     androidTestImplementation librarys.espressoTest
 
     api project(path: ':moduleSystem:moduleDatabase')
+    api project(path: ':moduleSystem:moduleHttp')
     api project(path: ':moduleSystem:moduleSherlockAdapter')
 }

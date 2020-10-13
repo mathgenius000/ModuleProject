@@ -1,8 +1,8 @@
+include ':moduleSystem:moduleHttp'
 include ':app'
 include ':moduleCore:moduleUser'
 include ':modulePublic:moduleCommon'
 include ':moduleSystem:moduleDatabase'
 include ':moduleSystem:moduleBase'
-include ':moduleSystem:moduleHttp'
 include ':moduleSystem:moduleSherlockAdapter'
 rootProject.name = "ModuleProject"
