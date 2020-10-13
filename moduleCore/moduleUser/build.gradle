@@ -38,6 +38,6 @@ dependencies {
     implementation librarys.recyclerview
     implementation librarys.glide
 
-    implementation project(path: ':moduleSystem:moduleBase')
-    implementation project(path: ':modulePublic:moduleCommon')
+    api project(path: ':moduleSystem:moduleBase')
+    api project(path: ':modulePublic:moduleCommon')
 }

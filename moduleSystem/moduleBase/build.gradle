@@ -34,4 +34,15 @@ dependencies {
     api project(path: ':moduleSystem:moduleDatabase')
     api project(path: ':moduleSystem:moduleHttp')
     api project(path: ':moduleSystem:moduleSherlockAdapter')
+
+    api librarys.basePopup
+
+    api librarys.refreshLayoutKernel
+    api librarys.refreshHeaderClassics
+//    api librarys.refreshHeaderRadar
+//    api librarys.refreshHeaderFalsify
+//    api librarys.refreshHeaderMaterial
+//    api librarys.refreshHeaderTwoLevel
+//    api librarys.refreshFooterBall
+    api librarys.refreshFooterClassics
 }

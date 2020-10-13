@@ -11,7 +11,7 @@ ext {
     ]
     //依赖配置 添加需要使用的依赖，使用即可
     dependencies = [
-            project         : [
+            project              : [
                     moduleUser           : ':moduleCore:moduleUser',
                     moduleCommon         : ':modulePublic:moduleCommon',
                     moduleBase           : ':moduleSystem:moduleBase',
@@ -19,21 +19,37 @@ ext {
                     moduleHttp           : ':moduleSystem:moduleHttp',
                     moduleSherlockAdapter: ':moduleSystem:moduleSherlockAdapter'
             ],
-            appcompat       : 'androidx.appcompat:appcompat:1.2.0',
-            junit           : 'junit:junit:4.12',
-            junitTest       : 'androidx.test.ext:junit:1.1.2',
-            espressoTest    : 'androidx.test.espresso:espresso-core:3.3.0',
-            supportv4       : 'com.android.support:support-v4:28.0.0',
-            supportv7       : 'com.android.support:appcompat-v7:28.0.0',
-            design          : 'com.android.support:design:28.0.0',
-            constraintlayout: 'androidx.constraintlayout:constraintlayout:2.0.1',
-            recyclerview    : 'androidx.recyclerview:recyclerview:1.2.0-alpha05',
-            glide           : 'com.github.bumptech.glide:glide:4.11.0',
-            ormliteAndroid  : 'com.j256.ormlite:ormlite-android:5.1',
-            ormliteCore     : 'com.j256.ormlite:ormlite-core:5.1',
+            appcompat            : 'androidx.appcompat:appcompat:1.2.0',
+            junit                : 'junit:junit:4.12',
+            junitTest            : 'androidx.test.ext:junit:1.1.2',
+            espressoTest         : 'androidx.test.espresso:espresso-core:3.3.0',
+            supportv4            : 'com.android.support:support-v4:28.0.0',
+            supportv7            : 'com.android.support:appcompat-v7:28.0.0',
+            design               : 'com.android.support:design:28.0.0',
+            constraintlayout     : 'androidx.constraintlayout:constraintlayout:2.0.1',
+            recyclerview         : 'androidx.recyclerview:recyclerview:1.2.0-alpha05',
+            glide                : 'com.github.bumptech.glide:glide:4.11.0',
 
-            okgo            : 'com.lzy.net:okgo:3.0.4',
-            okrx2           : 'com.lzy.net:okrx2:2.0.2',
-            okserver        : 'com.lzy.net:okserver:2.0.5'
+            /**** OrmLite数据库框架 ****/
+            ormliteAndroid       : 'com.j256.ormlite:ormlite-android:5.1',
+            ormliteCore          : 'com.j256.ormlite:ormlite-core:5.1',
+
+            /**** okgo ****/
+            okgo                 : 'com.lzy.net:okgo:3.0.4',
+            okrx2                : 'com.lzy.net:okrx2:2.0.2',
+            okserver             : 'com.lzy.net:okserver:2.0.5',
+
+            /**** popupwindow ****/
+            basePopup            : 'com.github.razerdp:BasePopup:2.2.9',
+
+            /**** smartRefreshLayout 下拉刷新 ****/
+            refreshLayoutKernel  : 'com.scwang.smart:refresh-layout-kernel:2.0.1',      //核心必须依赖
+            refreshHeaderClassics: 'com.scwang.smart:refresh-header-classics:2.0.1',    //经典刷新头
+            refreshHeaderRadar   : 'com.scwang.smart:refresh-header-radar:2.0.1',       //雷达刷新头
+            refreshHeaderFalsify : 'com.scwang.smart:refresh-header-falsify:2.0.1',     //虚拟刷新头
+            refreshHeaderMaterial: 'com.scwang.smart:refresh-header-material:2.0.1',    //谷歌刷新头
+            refreshHeaderTwoLevel: 'com.scwang.smart:refresh-header-two-level:2.0.1',   //二级刷新头
+            refreshFooterBall    : 'com.scwang.smart:refresh-footer-ball:2.0.1',        //球脉冲加载
+            refreshFooterClassics: 'com.scwang.smart:refresh-footer-classics:2.0.1'     //经典加载
     ]
 }

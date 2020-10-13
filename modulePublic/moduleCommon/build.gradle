@@ -32,5 +32,5 @@ dependencies {
     androidTestImplementation librarys.junitTest
     androidTestImplementation librarys.espressoTest
 
-    implementation project(path: ':moduleSystem:moduleBase')
+    api project(path: ':moduleSystem:moduleBase')
 }
