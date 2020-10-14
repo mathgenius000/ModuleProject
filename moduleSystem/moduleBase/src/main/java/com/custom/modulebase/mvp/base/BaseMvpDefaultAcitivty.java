@@ -1,13 +1,10 @@
 package com.custom.modulebase.mvp.base;
 
-
-
 /**
  * Author：DownieM
- * Date：2020.6.5
+ * Date：2020.10.14
  */
-public class BaseDefaultFragment extends BaseFragment<DefaultModel, DefaultView, DefaultPresenter> {
-
+public abstract class BaseMvpDefaultAcitivty extends BaseMvpActivity<DefaultModel, DefaultView, DefaultPresenter> {
 
     @Override
     public DefaultModel createModel() {
@@ -23,4 +20,5 @@ public class BaseDefaultFragment extends BaseFragment<DefaultModel, DefaultView,
     public DefaultPresenter createPresenter() {
         return null;
     }
+
 }

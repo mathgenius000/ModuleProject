@@ -1,8 +1,9 @@
-package com.custom.modulebase.mvp.base;
+package com.custom.modulebase.base;
 
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import org.greenrobot.eventbus.EventBus;
@@ -14,34 +15,19 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * Author：DownieM
- * Date：2020.10.14
- *
- * @param <M>
- * @param <V>
- * @param <P>
+ * Author：CanneyLin
+ * Date：2018.11.16
  */
-public abstract class BaseMvpFragment<M extends Model, V extends View, P extends BasePresenter> extends Fragment implements BaseMvp<M, V, P> {
+public abstract class BaseFragment extends Fragment {
 
 
     protected Context mContext;
-
     private Unbinder butterKnifeBind;
-
-    protected P presenter;
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         mContext = context;
-        //创建Presenter
-        presenter = createPresenter();
-        if (null != presenter) {
-            //将Model层注册到Presenter中
-            presenter.registerModel(createModel());
-            //将View层注册到Presenter中
-            presenter.registerView(createView());
-        }
     }
 
     @Override
@@ -54,8 +40,8 @@ public abstract class BaseMvpFragment<M extends Model, V extends View, P extends
 
     @Nullable
     @Override
-    public android.view.View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        android.view.View view = android.view.View.inflate(getActivity(), getLayoutId(), null);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = View.inflate(getActivity(), getLayoutId(), null);
         butterKnifeBind = ButterKnife.bind(this, view);
         if (null != savedInstanceState) {
             initBundle(savedInstanceState);
@@ -72,7 +58,7 @@ public abstract class BaseMvpFragment<M extends Model, V extends View, P extends
 
     protected abstract void initListener();
 
-    protected abstract void initView(android.view.View view);
+    protected abstract void initView(View view);
 
     protected abstract int getLayoutId();
 
@@ -91,14 +77,6 @@ public abstract class BaseMvpFragment<M extends Model, V extends View, P extends
         super.onDestroy();
         if (EventBus.getDefault().isRegistered(this)) {
             EventBus.getDefault().unregister(this);
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        if (null != presenter) {
-            presenter.destroy();
         }
     }
 

@@ -2,9 +2,9 @@ package com.custom.modulebase.mvp.base;
 
 /**
  * Author：DownieM
- * Date：2020.6.5
+ * 2020.10.14
  */
-public  class BaseDefaultAcitivty extends BaseAcitivty<DefaultModel, DefaultView, DefaultPresenter> {
+public abstract class BaseMvpDefaultFragment extends BaseMvpFragment<DefaultModel, DefaultView, DefaultPresenter> {
 
 
     @Override

@@ -45,4 +45,12 @@ dependencies {
 //    api librarys.refreshHeaderTwoLevel
 //    api librarys.refreshFooterBall
     api librarys.refreshFooterClassics
+
+    api librarys.butterknife
+    annotationProcessor librarys.butterknifeCompiler
+
+    api librarys.arouter
+    annotationProcessor librarys.arouterCompiler
+
+    api librarys.eventbus
 }

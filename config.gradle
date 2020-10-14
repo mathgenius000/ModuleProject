@@ -50,6 +50,17 @@ ext {
             refreshHeaderMaterial: 'com.scwang.smart:refresh-header-material:2.0.1',    //谷歌刷新头
             refreshHeaderTwoLevel: 'com.scwang.smart:refresh-header-two-level:2.0.1',   //二级刷新头
             refreshFooterBall    : 'com.scwang.smart:refresh-footer-ball:2.0.1',        //球脉冲加载
-            refreshFooterClassics: 'com.scwang.smart:refresh-footer-classics:2.0.1'     //经典加载
+            refreshFooterClassics: 'com.scwang.smart:refresh-footer-classics:2.0.1',     //经典加载
+
+            /**** butterknife ****/
+            butterknife          : 'com.jakewharton:butterknife:10.2.3',
+            butterknifeCompiler  : 'com.jakewharton:butterknife-compiler:10.2.3',
+
+            /**** arouter ****/
+            arouter              : 'com.alibaba:arouter-api:1.5.0',
+            arouterCompiler      : 'com.alibaba:arouter-compiler:1.2.2',
+
+            eventbus             : 'org.greenrobot:eventbus:3.2.0'
+
     ]
 }
