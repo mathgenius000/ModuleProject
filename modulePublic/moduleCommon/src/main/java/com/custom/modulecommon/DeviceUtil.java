@@ -1,5 +1,6 @@
 package com.custom.modulecommon;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.Application;
@@ -21,9 +22,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 
-public class DeviceUtil {
+import androidx.core.app.ActivityCompat;
 
-    public static String DEVICE_ID = "";
+public class DeviceUtil {
 
     /**
      * dp 转化为 px
@@ -66,8 +67,20 @@ public class DeviceUtil {
                 Build.MODEL.length() % 10 + Build.PRODUCT.length() % 10 +
                 Build.TAGS.length() % 10 + Build.TYPE.length() % 10 +
                 Build.USER.length() % 10; //13 位
-        //使用硬件信息拼凑出来的15位号码
-        return new UUID(m_szDevIDShort.hashCode(), "serial".hashCode()).toString();
+        //serial需要一个初始化
+        String serial = "serial";
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+                    serial = Build.getSerial();
+                }
+            } else {
+                serial = Build.SERIAL;
+            }
+        } catch (Exception exception) {
+
+        }
+        return new UUID(m_szDevIDShort.hashCode(), serial.hashCode()).toString();
     }
 
     /**
