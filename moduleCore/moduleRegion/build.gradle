@@ -1,16 +1,17 @@
-plugins {
-    id 'com.android.library'
-}
+apply plugin: 'com.android.library'
+
+def config = rootProject.ext.android//配置
+def librarys = rootProject.ext.dependencies//依赖
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode config.versionCode
+        versionName config.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -30,10 +31,17 @@ android {
 }
 
 dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation librarys.appcompat
+    testImplementation librarys.junit
+    androidTestImplementation librarys.junitTest
+    androidTestImplementation librarys.espressoTest
+    implementation librarys.supportv4
+    implementation librarys.supportv7
+    implementation librarys.design
+    implementation librarys.constraintlayout
 
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    implementation project(path: ':moduleSystem:moduleBase')
+    implementation project(path: ':modulePublic:moduleCommon')
 }
