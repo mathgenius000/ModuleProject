@@ -6,8 +6,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.alibaba.android.arouter.launcher.ARouter;
-
 import org.greenrobot.eventbus.EventBus;
 
 import androidx.annotation.Nullable;
@@ -30,7 +28,6 @@ public abstract class BaseActivity extends AppCompatActivity {
             window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
         super.onCreate(savedInstanceState);
-        ARouter.getInstance().inject(this);
         setContentView(getLayoutId());
         if (!EventBus.getDefault().isRegistered(this)) {
             EventBus.getDefault().register(this);

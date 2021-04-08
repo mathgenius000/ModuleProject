@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.alibaba.android.arouter.launcher.ARouter;
-
 import org.greenrobot.eventbus.EventBus;
 
 import androidx.annotation.Nullable;
@@ -43,7 +41,6 @@ public abstract class BaseMvpActivity<M extends Model, V extends View, P extends
             //将View层注册到Presenter中
             presenter.registerView(createView());
         }
-        ARouter.getInstance().inject(this);
         setContentView(getLayoutId());
         if (!EventBus.getDefault().isRegistered(this)) {
             EventBus.getDefault().register(this);

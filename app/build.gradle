@@ -15,6 +15,8 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -22,6 +24,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -32,8 +39,9 @@ dependencies {
     androidTestImplementation librarys.junitTest
     androidTestImplementation librarys.espressoTest
 
-    implementation project(path: ':moduleCore:moduleCenter')
     implementation project(path: ':moduleCore:moduleIndex')
+    implementation project(path: ':moduleCore:moduleNews')
+    implementation project(path: ':moduleCore:moduleRegion')
     implementation project(path: ':moduleCore:moduleUser')
 
     implementation librarys.constraintlayout

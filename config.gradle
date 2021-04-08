@@ -12,8 +12,9 @@ ext {
     //依赖配置 添加需要使用的依赖，使用即可
     dependencies = [
             project              : [
-                    moduleCenter          : ':moduleCore:moduleCenter',
                     moduleIndex          : ':moduleCore:moduleIndex',
+                    moduleNews           : ':moduleCore:moduleNews',
+                    moduleRegion         : ':moduleCore:moduleRegion',
                     moduleUser           : ':moduleCore:moduleUser',
                     moduleCommon         : ':modulePublic:moduleCommon',
                     moduleBase           : ':moduleSystem:moduleBase',
@@ -58,9 +59,9 @@ ext {
             butterknife          : 'com.jakewharton:butterknife:10.2.3',
             butterknifeCompiler  : 'com.jakewharton:butterknife-compiler:10.2.3',
 
-            /**** arouter ****/
-            arouter              : 'com.alibaba:arouter-api:1.5.0',
-            arouterCompiler      : 'com.alibaba:arouter-compiler:1.2.2',
+//            /**** arouter ****/
+//            arouter              : 'com.alibaba:arouter-api:1.5.0',
+//            arouterCompiler      : 'com.alibaba:arouter-compiler:1.2.2',
 
             eventbus             : 'org.greenrobot:eventbus:3.2.0'
 

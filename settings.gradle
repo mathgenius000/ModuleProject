@@ -1,10 +1,15 @@
-include ':moduleSystem:moduleHttp'
 include ':app'
-include ':moduleCore:moduleCenter'
+
 include ':moduleCore:moduleIndex'
+include ':moduleCore:moduleNews'
+include ':moduleCore:moduleRegion'
 include ':moduleCore:moduleUser'
+
 include ':modulePublic:moduleCommon'
-include ':moduleSystem:moduleDatabase'
+
 include ':moduleSystem:moduleBase'
+include ':moduleSystem:moduleHttp'
+include ':moduleSystem:moduleDatabase'
 include ':moduleSystem:moduleSherlockAdapter'
+
 rootProject.name = "ModuleProject"
