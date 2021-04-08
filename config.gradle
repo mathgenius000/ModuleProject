@@ -12,6 +12,8 @@ ext {
     //依赖配置 添加需要使用的依赖，使用即可
     dependencies = [
             project              : [
+                    moduleCenter          : ':moduleCore:moduleCenter',
+                    moduleIndex          : ':moduleCore:moduleIndex',
                     moduleUser           : ':moduleCore:moduleUser',
                     moduleCommon         : ':modulePublic:moduleCommon',
                     moduleBase           : ':moduleSystem:moduleBase',

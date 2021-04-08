@@ -1,5 +1,7 @@
 include ':moduleSystem:moduleHttp'
 include ':app'
+include ':moduleCore:moduleCenter'
+include ':moduleCore:moduleIndex'
 include ':moduleCore:moduleUser'
 include ':modulePublic:moduleCommon'
 include ':moduleSystem:moduleDatabase'

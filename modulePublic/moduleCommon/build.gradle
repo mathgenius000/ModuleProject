@@ -32,5 +32,6 @@ dependencies {
     androidTestImplementation librarys.junitTest
     androidTestImplementation librarys.espressoTest
 
-    api project(path: ':moduleSystem:moduleBase')
+    implementation project(path: ':moduleSystem:moduleBase')
+    //TODO api modulePublic下的module
 }
