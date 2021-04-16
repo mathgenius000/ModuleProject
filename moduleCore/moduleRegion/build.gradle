@@ -1,4 +1,10 @@
-apply plugin: 'com.android.library'
+//apply plugin: 'com.android.library'
+//根据isModule标签动态的切换 集成/组件模式
+if (rootProject.isModule){
+    apply plugin: 'com.android.library'
+}else{
+    apply plugin: 'com.android.application'
+}
 
 def config = rootProject.ext.android//配置
 def librarys = rootProject.ext.dependencies//依赖
@@ -8,6 +14,12 @@ android {
     buildToolsVersion config.buildToolsVersion
 
     defaultConfig {
+
+        //组件模式下
+        if (!rootProject.isModule){
+            applicationId rootProject.appId.region
+        }
+
         minSdkVersion config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
         versionCode config.versionCode
@@ -15,6 +27,18 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+    }
+
+    //资源配置
+    sourceSets {
+        main {
+            //在组件模式下 使用不同的manifest文件
+            if (!rootProject.isModule) {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
     }
 
     buildTypes {

@@ -1,5 +1,10 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 ext {
+
+    // false: 组件模式
+    // true ：集成模式
+    isModule = true
+
     //系统配置
     android = [
             compileSdkVersion: 30,
@@ -9,6 +14,15 @@ ext {
             versionCode      : 1,
             versionName      : "1.0"
     ]
+
+    //子module appId
+    appId = [
+            index:"com.moduleproject.moduleindex",
+            news:"com.moduleproject.modulenews",
+            region:"com.moduleproject.moduleregion",
+            user:"com.moduleproject.moduleuser",
+    ]
+
     //依赖配置 添加需要使用的依赖，使用即可
     dependencies = [
             project              : [
