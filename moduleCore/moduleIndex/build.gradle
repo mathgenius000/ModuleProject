@@ -41,7 +41,6 @@ dependencies {
     implementation librarys.design
     implementation librarys.constraintlayout
 
-
     implementation project(path: ':moduleSystem:moduleBase')
     implementation project(path: ':modulePublic:moduleCommon')
 }

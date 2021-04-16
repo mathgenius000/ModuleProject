@@ -17,12 +17,48 @@ android {
         consumerProguardFiles "consumer-rules.pro"
 
         multiDexEnabled true
+
+        flavorDimensions "default" //保证所有的flavor 都属于同一个维度
     }
 
     buildTypes {
+        debug {
+            minifyEnabled false //是否代码混淆
+            multiDexEnabled true //防止方法数量超过65536导致错误
+        }
+
         release {
-            minifyEnabled false
+            minifyEnabled true
+            multiDexEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            lintOptions {
+                checkReleaseBuilds false
+                abortOnError false
+            }
+            // 自定义apk输出配置
+            applicationVariants.all { variant ->
+                variant.outputs.all {
+                    def flavorName = variant.flavorName
+                    def type = buildType.name
+                    outputFileName = APP_NAME + "-" + flavorName + "-" + type + ".apk"
+                }
+            }
+        }
+    }
+
+    //多版本打包实现方式
+    productFlavors {
+        dev {
+            buildConfigField "String", "BASE_URL", BASE_URL_DEV
+        }
+        _test {
+            buildConfigField "String", "BASE_URL", BASE_URL_TEST
+        }
+        uat {
+            buildConfigField "String", "BASE_URL", BASE_URL_UAT
+        }
+        product {
+            buildConfigField "String", "BASE_URL", BASE_URL_PRODUCT
         }
     }
 
@@ -43,6 +79,10 @@ dependencies {
     implementation project(path: ':moduleCore:moduleNews')
     implementation project(path: ':moduleCore:moduleRegion')
     implementation project(path: ':moduleCore:moduleUser')
+
+    implementation project(path: ':modulePublic:moduleCommon')
+
+    implementation project(path: ':moduleSystem:moduleBase')
 
     implementation librarys.constraintlayout
 }
