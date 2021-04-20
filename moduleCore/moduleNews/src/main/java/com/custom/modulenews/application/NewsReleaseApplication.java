@@ -19,7 +19,7 @@ public class NewsReleaseApplication implements ApplicationService {
         private static final NewsReleaseApplication INSTANCE = new NewsReleaseApplication();
     }
 
-    public static final NewsReleaseApplication getInstance() {
+    public static NewsReleaseApplication getInstance() {
         return IndexReleaseApplicationHolder.INSTANCE;
     }
 

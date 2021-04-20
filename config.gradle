@@ -1,8 +1,8 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 ext {
 
-    // false: 组件模式
-    // true ：集成模式
+    // true ：集成模式 library 只能以依赖宿主App的方式存在
+    // false: 组件模式 app     作为单独的App，各module单独编译和运行
     isModule = true
 
     //系统配置
@@ -17,10 +17,11 @@ ext {
 
     //子module appId
     appId = [
-            index:"com.moduleproject.moduleindex",
-            news:"com.moduleproject.modulenews",
-            region:"com.moduleproject.moduleregion",
-            user:"com.moduleproject.moduleuser",
+            index : "com.moduleproject.moduleindex",
+            news  : "com.moduleproject.modulenews",
+            region: "com.moduleproject.moduleregion",
+            user  : "com.moduleproject.moduleuser",
+            route : "com.moduleproject.moduleroute",
     ]
 
     //依赖配置 添加需要使用的依赖，使用即可
@@ -31,6 +32,7 @@ ext {
                     moduleRegion         : ':moduleCore:moduleRegion',
                     moduleUser           : ':moduleCore:moduleUser',
                     moduleCommon         : ':modulePublic:moduleCommon',
+                    moduleRoute          : ':modulePublic:moduleRoute',
                     moduleBase           : ':moduleSystem:moduleBase',
                     moduleDatabase       : ':moduleSystem:moduleDatabase',
                     moduleHttp           : ':moduleSystem:moduleHttp',
@@ -73,9 +75,9 @@ ext {
             butterknife          : 'com.jakewharton:butterknife:10.2.3',
             butterknifeCompiler  : 'com.jakewharton:butterknife-compiler:10.2.3',
 
-//            /**** arouter ****/
-//            arouter              : 'com.alibaba:arouter-api:1.5.0',
-//            arouterCompiler      : 'com.alibaba:arouter-compiler:1.2.2',
+            /**** arouter ****/
+            arouter              : 'com.alibaba:arouter-api:1.4.1',
+            arouterCompiler      : 'com.alibaba:arouter-compiler:1.2.2',
 
             eventbus             : 'org.greenrobot:eventbus:3.2.0'
 

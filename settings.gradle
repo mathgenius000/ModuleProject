@@ -6,6 +6,7 @@ include ':moduleCore:moduleRegion'
 include ':moduleCore:moduleUser'
 
 include ':modulePublic:moduleCommon'
+include ':modulePublic:moduleRoute'
 
 include ':moduleSystem:moduleBase'
 include ':moduleSystem:moduleHttp'

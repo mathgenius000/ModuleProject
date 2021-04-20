@@ -1,9 +1,9 @@
 //apply plugin: 'com.android.library'
 //根据isModule标签动态的切换 集成/组件模式
-if (rootProject.isModule){
-    apply plugin: 'com.android.library'
-}else{
+if (!rootProject.isModule) {
     apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
 }
 
 def config = rootProject.ext.android//配置
@@ -27,13 +27,19 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [AROUTER_MODULE_NAME: project.getName()]
+//            }
+//        }
     }
 
     //资源配置
     sourceSets {
         main {
             //在组件模式下 使用不同的manifest文件
-            if (!rootProject.isModule) {
+            if (rootProject.isModule) {
                 manifest.srcFile 'src/main/module/AndroidManifest.xml'
             } else {
                 manifest.srcFile 'src/main/AndroidManifest.xml'
@@ -65,7 +71,8 @@ dependencies {
     implementation librarys.design
     implementation librarys.constraintlayout
 
-
     implementation project(path: ':moduleSystem:moduleBase')
     implementation project(path: ':modulePublic:moduleCommon')
+
+//    annotationProcessor librarys.arouterCompiler
 }

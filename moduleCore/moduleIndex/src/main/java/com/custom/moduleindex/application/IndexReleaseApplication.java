@@ -19,7 +19,7 @@ public class IndexReleaseApplication implements ApplicationService {
         private static final IndexReleaseApplication INSTANCE = new IndexReleaseApplication();
     }
 
-    public static final IndexReleaseApplication getInstance() {
+    public static IndexReleaseApplication getInstance() {
         return IndexReleaseApplicationHolder.INSTANCE;
     }
 

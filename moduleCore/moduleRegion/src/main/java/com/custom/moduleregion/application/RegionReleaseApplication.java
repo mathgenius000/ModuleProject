@@ -19,7 +19,7 @@ public class RegionReleaseApplication implements ApplicationService {
         private static final RegionReleaseApplication INSTANCE = new RegionReleaseApplication();
     }
 
-    public static final RegionReleaseApplication getInstance() {
+    public static RegionReleaseApplication getInstance() {
         return IndexReleaseApplicationHolder.INSTANCE;
     }
 

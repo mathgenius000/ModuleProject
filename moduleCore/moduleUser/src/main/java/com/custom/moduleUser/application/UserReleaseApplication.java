@@ -19,7 +19,7 @@ public class UserReleaseApplication implements ApplicationService {
         private static final UserReleaseApplication INSTANCE = new UserReleaseApplication();
     }
 
-    public static final UserReleaseApplication getInstance() {
+    public static UserReleaseApplication getInstance() {
         return IndexReleaseApplicationHolder.INSTANCE;
     }
 

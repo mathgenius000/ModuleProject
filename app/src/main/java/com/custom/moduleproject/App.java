@@ -11,6 +11,8 @@ import com.custom.moduleindex.application.IndexApplication;
 import com.custom.modulenews.application.NewsApplication;
 import com.custom.modulenews.application.NewsDebugApplication;
 import com.custom.moduleregion.application.RegionApplication;
+import com.custom.moduleroute.RouteActivity;
+import com.custom.moduleroute.application.RouteApplication;
 
 public class App extends Application implements ApplicationService {
     private static App INSTANCE = null;
@@ -30,6 +32,7 @@ public class App extends Application implements ApplicationService {
     @Override
     public void onCreate() {
         super.onCreate();
+        loadModuleApplicationService();//加载每个module的Application，使其完成初始化工作
 //        registerRouter();
     }
 
@@ -70,6 +73,7 @@ public class App extends Application implements ApplicationService {
 
     @Override
     public void loadModuleApplicationService() {
+        RouteApplication.getInstance().loadModuleApplicationService();
         IndexApplication.getInstance().loadModuleApplicationService();
         NewsApplication.getInstance().loadModuleApplicationService();
         RegionApplication.getInstance().loadModuleApplicationService();

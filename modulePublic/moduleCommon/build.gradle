@@ -15,6 +15,12 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [AROUTER_MODULE_NAME: project.getName()]
+//            }
+//        }
     }
 
     compileOptions {
@@ -31,5 +37,6 @@ dependencies {
     androidTestImplementation librarys.espressoTest
 
     implementation project(path: ':moduleSystem:moduleBase')
+    implementation project(path: ':modulePublic:moduleRoute')
     //TODO api modulePublic下的module
 }
