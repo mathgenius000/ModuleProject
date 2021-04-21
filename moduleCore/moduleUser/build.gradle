@@ -30,11 +30,11 @@ android {
 
         buildConfigField "boolean", "IS_MODULE", rootProject.isModule.toString()
 
-//        javaCompileOptions {
-//            annotationProcessorOptions {
-//                arguments = [AROUTER_MODULE_NAME: project.getName()]
-//            }
-//        }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     //资源配置
@@ -78,5 +78,5 @@ dependencies {
     implementation project(path: ':moduleSystem:moduleBase')
     implementation project(path: ':modulePublic:moduleCommon')
 
-//    annotationProcessor librarys.arouterCompiler
+    annotationProcessor librarys.arouterCompiler
 }

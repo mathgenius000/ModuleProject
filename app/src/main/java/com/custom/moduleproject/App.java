@@ -4,17 +4,14 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
-import com.custom.moduleUser.application.UserApplication;
-import com.custom.moduleUser.application.UserDebugApplication;
 import com.custom.modulebase.application.ApplicationService;
+import com.custom.modulebase.application.BaseApplication;
+import com.custom.moduleUser.application.UserApplication;
 import com.custom.moduleindex.application.IndexApplication;
 import com.custom.modulenews.application.NewsApplication;
-import com.custom.modulenews.application.NewsDebugApplication;
 import com.custom.moduleregion.application.RegionApplication;
-import com.custom.moduleroute.RouteActivity;
-import com.custom.moduleroute.application.RouteApplication;
 
-public class App extends Application implements ApplicationService {
+public class App extends BaseApplication implements ApplicationService {
     private static App INSTANCE = null;
     private static final String TAG = "App";
 
@@ -32,7 +29,7 @@ public class App extends Application implements ApplicationService {
     @Override
     public void onCreate() {
         super.onCreate();
-        loadModuleApplicationService();//加载每个module的Application，使其完成初始化工作
+        init();//加载每个module的Application，使其完成初始化工作
 //        registerRouter();
     }
 
@@ -41,7 +38,7 @@ public class App extends Application implements ApplicationService {
 //        initRouterByAnnotation();// 注册Activity 路由
 //        // OR
 //        // initRouterByDynamic(); // 注册Activity 路由
-//        loadModuleApplicationService(); //加载每个module的Application，使其完成初始化工作
+//        init(); //加载每个module的Application，使其完成初始化工作
 //        RouterServiceManager.getInstance().init(this);// 注册组件之间服务路由
 //    }
 
@@ -72,12 +69,11 @@ public class App extends Application implements ApplicationService {
 //    }
 
     @Override
-    public void loadModuleApplicationService() {
-        RouteApplication.getInstance().loadModuleApplicationService();
-        IndexApplication.getInstance().loadModuleApplicationService();
-        NewsApplication.getInstance().loadModuleApplicationService();
-        RegionApplication.getInstance().loadModuleApplicationService();
-        UserApplication.getInstance().loadModuleApplicationService();
+    public void init() {
+        IndexApplication.getInstance().init();
+        NewsApplication.getInstance().init();
+        RegionApplication.getInstance().init();
+        UserApplication.getInstance().init();
     }
 
     @Override

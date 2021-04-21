@@ -5,8 +5,9 @@ import android.content.Context;
 import android.util.Log;
 
 import com.custom.modulebase.application.ApplicationService;
+import com.custom.modulebase.application.BaseApplication;
 
-public class NewsDebugApplication extends Application implements ApplicationService {
+public class NewsDebugApplication extends BaseApplication implements ApplicationService {
 
     private static final String TAG = "NewsDebugApplication";
     private static NewsDebugApplication INSTANCE = null;
@@ -23,7 +24,7 @@ public class NewsDebugApplication extends Application implements ApplicationServ
     }
 
     @Override
-    public void loadModuleApplicationService() {
+    public void init() {
         Log.d(TAG, "load NewsDebugApplication");
     }
 

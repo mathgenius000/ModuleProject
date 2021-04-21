@@ -21,11 +21,11 @@ public class RegionApplication implements ApplicationService {
     }
 
     @Override
-    public void loadModuleApplicationService() {
+    public void init() {
         if (BuildConfig.IS_MODULE) {
-            RegionReleaseApplication.getInstance().loadModuleApplicationService();
+            RegionReleaseApplication.getInstance().init();
         } else {
-            RegionDebugApplication.getInstance().loadModuleApplicationService();
+            RegionDebugApplication.getInstance().init();
         }
     }
 

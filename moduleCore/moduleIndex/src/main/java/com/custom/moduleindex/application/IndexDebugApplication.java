@@ -5,8 +5,10 @@ import android.content.Context;
 import android.util.Log;
 
 import com.custom.modulebase.application.ApplicationService;
+import com.custom.modulebase.application.BaseApplication;
+import com.custom.modulebase.base.BaseActivity;
 
-public class IndexDebugApplication extends Application implements ApplicationService {
+public class IndexDebugApplication extends BaseApplication implements ApplicationService {
 
     private static final String TAG = "IndexDebugApplication";
     private static IndexDebugApplication INSTANCE = null;
@@ -23,7 +25,7 @@ public class IndexDebugApplication extends Application implements ApplicationSer
     }
 
     @Override
-    public void loadModuleApplicationService() {
+    public void init() {
         Log.d(TAG, "load IndexDebugApplication");
     }
 

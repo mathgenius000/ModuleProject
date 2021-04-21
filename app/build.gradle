@@ -20,11 +20,11 @@ android {
 
         flavorDimensions "default" //保证所有的flavor 都属于同一个维度
 
-//        javaCompileOptions {
-//            annotationProcessorOptions {
-//                arguments = [AROUTER_MODULE_NAME: project.getName()]
-//            }
-//        }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -86,13 +86,12 @@ dependencies {
         implementation project(path: ':moduleCore:moduleNews')
         implementation project(path: ':moduleCore:moduleRegion')
         implementation project(path: ':moduleCore:moduleUser')
-        implementation project(path: ':modulePublic:moduleRoute')
     }
-
     implementation project(path: ':modulePublic:moduleCommon')
+    implementation project(path: ':modulePublic:moduleRoute')
     implementation project(path: ':moduleSystem:moduleBase')
 
     implementation librarys.constraintlayout
-//    annotationProcessor librarys.arouterCompiler
+    annotationProcessor librarys.arouterCompiler
 }
 

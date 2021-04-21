@@ -21,11 +21,11 @@ public class IndexApplication implements ApplicationService {
     }
 
     @Override
-    public void loadModuleApplicationService() {
+    public void init() {
         if (BuildConfig.IS_MODULE) {
-            IndexReleaseApplication.getInstance().loadModuleApplicationService();
+            IndexReleaseApplication.getInstance().init();
         } else {
-            IndexDebugApplication.getInstance().loadModuleApplicationService();
+            IndexDebugApplication.getInstance().init();
         }
     }
 

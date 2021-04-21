@@ -51,7 +51,7 @@ public class RegionReleaseApplication implements ApplicationService {
     }
 
     @Override
-    public void loadModuleApplicationService() {
+    public void init() {
         Log.d(TAG, "load RegionReleaseApplication");
     }
 }
