@@ -7,6 +7,8 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,6 +49,12 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected abstract int getLayoutId();//加载布局
 
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventMainThread(MessageEvent event) {
+
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -68,4 +76,5 @@ public abstract class BaseActivity extends AppCompatActivity {
         getWindow().setAttributes(params);
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
     }
+
 }

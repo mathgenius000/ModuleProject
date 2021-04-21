@@ -22,19 +22,19 @@ public class IndexApplication implements ApplicationService {
 
     @Override
     public void loadModuleApplicationService() {
-        if (BuildConfig.DEBUG) {
-            IndexDebugApplication.getInstance().loadModuleApplicationService();
-        } else {
+        if (BuildConfig.IS_MODULE) {
             IndexReleaseApplication.getInstance().loadModuleApplicationService();
+        } else {
+            IndexDebugApplication.getInstance().loadModuleApplicationService();
         }
     }
 
     @Override
     public Application getApplication() {
-        if (BuildConfig.DEBUG) {
-            return IndexDebugApplication.getInstance().getApplication();
-        } else {
+        if (BuildConfig.IS_MODULE) {
             return IndexReleaseApplication.getInstance().getApplication();
+        } else {
+            return IndexDebugApplication.getInstance().getApplication();
         }
     }
 

@@ -28,6 +28,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
 
+        buildConfigField "boolean", "IS_MODULE", rootProject.isModule.toString()
+
 //        javaCompileOptions {
 //            annotationProcessorOptions {
 //                arguments = [AROUTER_MODULE_NAME: project.getName()]
@@ -67,6 +69,9 @@ dependencies {
     testImplementation librarys.junit
     androidTestImplementation librarys.junitTest
     androidTestImplementation librarys.espressoTest
+    implementation librarys.supportv4
+    implementation librarys.supportv7
+    implementation librarys.design
 
     implementation project(path: ':moduleSystem:moduleBase')
 

@@ -3,7 +3,7 @@ ext {
 
     // true ：集成模式 library 只能以依赖宿主App的方式存在
     // false: 组件模式 app     作为单独的App，各module单独编译和运行
-    isModule = true
+    isModule = false
 
     //系统配置
     android = [

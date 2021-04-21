@@ -22,19 +22,19 @@ public class NewsApplication implements ApplicationService {
 
     @Override
     public void loadModuleApplicationService() {
-        if (BuildConfig.DEBUG) {
-            NewsDebugApplication.getInstance().loadModuleApplicationService();
-        } else {
+        if (BuildConfig.IS_MODULE) {
             NewsReleaseApplication.getInstance().loadModuleApplicationService();
+        } else {
+            NewsDebugApplication.getInstance().loadModuleApplicationService();
         }
     }
 
     @Override
     public Application getApplication() {
-        if (BuildConfig.DEBUG) {
-            return NewsDebugApplication.getInstance().getApplication();
-        } else {
+        if (BuildConfig.IS_MODULE) {
             return NewsReleaseApplication.getInstance().getApplication();
+        } else {
+            return NewsDebugApplication.getInstance().getApplication();
         }
     }
 

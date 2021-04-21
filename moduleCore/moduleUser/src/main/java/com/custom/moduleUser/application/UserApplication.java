@@ -22,19 +22,19 @@ public class UserApplication implements ApplicationService {
 
     @Override
     public void loadModuleApplicationService() {
-        if (BuildConfig.DEBUG) {
-            UserDebugApplication.getInstance().loadModuleApplicationService();
-        } else {
+        if (BuildConfig.IS_MODULE) {
             UserReleaseApplication.getInstance().loadModuleApplicationService();
+        } else {
+            UserDebugApplication.getInstance().loadModuleApplicationService();
         }
     }
 
     @Override
     public Application getApplication() {
-        if (BuildConfig.DEBUG) {
-            return UserDebugApplication.getInstance().getApplication();
-        } else {
+        if (BuildConfig.IS_MODULE) {
             return UserReleaseApplication.getInstance().getApplication();
+        } else {
+            return UserDebugApplication.getInstance().getApplication();
         }
     }
 

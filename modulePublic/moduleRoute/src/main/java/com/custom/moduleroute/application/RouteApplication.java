@@ -22,19 +22,19 @@ public class RouteApplication implements ApplicationService {
 
     @Override
     public void loadModuleApplicationService() {
-        if (BuildConfig.DEBUG) {
-            RouteDebugApplication.getInstance().loadModuleApplicationService();
-        } else {
+        if (BuildConfig.IS_MODULE) {
             RouteReleaseApplication.getInstance().loadModuleApplicationService();
+        } else {
+            RouteDebugApplication.getInstance().loadModuleApplicationService();
         }
     }
 
     @Override
     public Application getApplication() {
-        if (BuildConfig.DEBUG) {
-            return RouteDebugApplication.getInstance().getApplication();
-        } else {
+        if (BuildConfig.IS_MODULE) {
             return RouteReleaseApplication.getInstance().getApplication();
+        } else {
+            return RouteDebugApplication.getInstance().getApplication();
         }
     }
 
