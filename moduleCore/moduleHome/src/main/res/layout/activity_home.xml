@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <FrameLayout
+        android:id="@+id/ll_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rg_tab"
+        android:orientation="vertical" />
+
+    <RadioGroup
+        android:id="@+id/rg_tab"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/home_tab_bg"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_index"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/selector_home_index"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:text="首页"
+            android:textColor="@color/selector_home_button"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/rb_news"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_home_news"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:text="消息"
+            android:textColor="@color/selector_home_button"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/rb_region"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawablePadding="4dp"
+            android:drawableTop="@drawable/selector_home_region"
+            android:gravity="center"
+            android:text="区域"
+            android:textColor="@color/selector_home_button"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/rb_user"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/selector_home_user"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:text="用户"
+            android:textColor="@color/selector_home_button"
+            android:textSize="12sp" />
+
+    </RadioGroup>
+
+</RelativeLayout>

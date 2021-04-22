@@ -30,6 +30,6 @@ public class UserActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_user;
+        return R.layout.home_user;
     }
 }

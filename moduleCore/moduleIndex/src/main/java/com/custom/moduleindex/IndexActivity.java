@@ -21,6 +21,6 @@ public class IndexActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_index;
+        return R.layout.home_index;
     }
 }

@@ -17,6 +17,7 @@ ext {
 
     //子module appId
     appId = [
+            home  : "com.moduleproject.modulehome",
             index : "com.moduleproject.moduleindex",
             news  : "com.moduleproject.modulenews",
             region: "com.moduleproject.moduleregion",
@@ -26,6 +27,7 @@ ext {
     //依赖配置 添加需要使用的依赖，使用即可
     dependencies = [
             project              : [
+                    moduleHome           : ':moduleCore:moduleHome',
                     moduleIndex          : ':moduleCore:moduleIndex',
                     moduleNews           : ':moduleCore:moduleNews',
                     moduleRegion         : ':moduleCore:moduleRegion',

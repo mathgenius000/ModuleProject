@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
 
 def config = rootProject.ext.android//配置
 def librarys = rootProject.ext.dependencies//依赖
@@ -50,6 +51,8 @@ dependencies {
 
     implementation project(path: ':moduleSystem:moduleBase')
 
-//    implementation librarys.arouter
+    annotationProcessor librarys.butterknifeCompiler
+    implementation librarys.arouter
     annotationProcessor librarys.arouterCompiler
+    implementation librarys.eventbus
 }

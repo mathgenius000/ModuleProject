@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
 
 def config = rootProject.ext.android//配置
 def librarys = rootProject.ext.dependencies//依赖
@@ -37,8 +38,8 @@ dependencies {
     androidTestImplementation librarys.espressoTest
 
     implementation project(path: ':moduleSystem:moduleBase')
-    implementation project(path: ':modulePublic:moduleRoute')
-    //TODO api modulePublic下的module
+    api project(path: ':modulePublic:moduleRoute')
 
+    annotationProcessor librarys.butterknifeCompiler
     annotationProcessor librarys.arouterCompiler
 }

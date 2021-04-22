@@ -47,21 +47,20 @@ dependencies {
     api project(path: ':moduleSystem:moduleSherlockAdapter')
 
     api librarys.basePopup
-
-    api librarys.refreshLayoutKernel
-    api librarys.refreshHeaderClassics
+    implementation librarys.refreshLayoutKernel
+    implementation librarys.refreshHeaderClassics
 //    api librarys.refreshHeaderRadar
 //    api librarys.refreshHeaderFalsify
 //    api librarys.refreshHeaderMaterial
 //    api librarys.refreshHeaderTwoLevel
 //    api librarys.refreshFooterBall
-    api librarys.refreshFooterClassics
-
+    implementation librarys.refreshFooterClassics
+    //butterknife
     api librarys.butterknife
     annotationProcessor librarys.butterknifeCompiler
-
-    api librarys.eventbus
     //arouter
     api librarys.arouter
     annotationProcessor librarys.arouterCompiler
+    //eventbus
+    api librarys.eventbus
 }

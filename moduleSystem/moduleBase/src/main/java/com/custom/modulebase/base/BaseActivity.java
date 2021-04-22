@@ -40,15 +40,13 @@ public abstract class BaseActivity extends AppCompatActivity {
         initData();
     }
 
-    protected abstract void initData();//加载数据
-
-    protected abstract void initListener();//加载监听器
-
+    protected abstract int getLayoutId();//加载布局
 
     protected abstract void initView();//加载控件
 
-    protected abstract int getLayoutId();//加载布局
+    protected abstract void initListener();//加载监听器
 
+    protected abstract void initData();//加载数据
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventMainThread(MessageEvent event) {

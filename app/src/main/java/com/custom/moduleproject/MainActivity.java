@@ -2,27 +2,17 @@ package com.custom.moduleproject;
 
 import android.os.Bundle;
 
-import com.custom.modulebase.base.BaseActivity;
+import com.custom.moduleroute.RouteHome;
 
-public class MainActivity extends BaseActivity {
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
-    @Override
-    protected void initData() {
-
-    }
+public class MainActivity extends AppCompatActivity {
 
     @Override
-    protected void initListener() {
-
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        RouteHome.lauchHome();
     }
 
-    @Override
-    protected void initView() {
-
-    }
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_main;
-    }
 }

@@ -82,6 +82,7 @@ dependencies {
     androidTestImplementation librarys.espressoTest
 
     if (rootProject.isModule){
+        implementation project(path: ':moduleCore:moduleHome')
         implementation project(path: ':moduleCore:moduleIndex')
         implementation project(path: ':moduleCore:moduleNews')
         implementation project(path: ':moduleCore:moduleRegion')
@@ -92,6 +93,7 @@ dependencies {
     implementation project(path: ':moduleSystem:moduleBase')
 
     implementation librarys.constraintlayout
+    annotationProcessor librarys.butterknifeCompiler
     annotationProcessor librarys.arouterCompiler
 }
 

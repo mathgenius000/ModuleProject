@@ -21,6 +21,6 @@ public class RegionActivity extends BaseActivity {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_region;
+        return R.layout.home_region;
     }
 }

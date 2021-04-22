@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -52,15 +54,20 @@ public abstract class BaseFragment extends Fragment {
         return view;
     }
 
+    protected abstract int getLayoutId();
+
     protected abstract void initBundle(Bundle savedInstanceState);
-
-    protected abstract void initData();
-
-    protected abstract void initListener();
 
     protected abstract void initView(View view);
 
-    protected abstract int getLayoutId();
+    protected abstract void initListener();
+
+    protected abstract void initData();
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventMainThread(MessageEvent event) {
+
+    }
 
     @Override
     public void onDestroyView() {

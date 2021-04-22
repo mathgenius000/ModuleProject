@@ -5,6 +5,7 @@ if (!rootProject.isModule) {
 } else {
     apply plugin: 'com.android.library'
 }
+apply plugin: 'com.jakewharton.butterknife'
 
 def config = rootProject.ext.android//配置
 def librarys = rootProject.ext.dependencies//依赖
@@ -76,5 +77,6 @@ dependencies {
     implementation project(path: ':moduleSystem:moduleBase')
     implementation project(path: ':modulePublic:moduleCommon')
 
+    annotationProcessor librarys.butterknifeCompiler
     annotationProcessor librarys.arouterCompiler
 }

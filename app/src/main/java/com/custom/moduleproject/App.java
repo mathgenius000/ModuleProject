@@ -7,6 +7,7 @@ import android.util.Log;
 import com.custom.modulebase.application.ApplicationService;
 import com.custom.modulebase.application.BaseApplication;
 import com.custom.moduleUser.application.UserApplication;
+import com.custom.modulehome.application.HomeApplication;
 import com.custom.moduleindex.application.IndexApplication;
 import com.custom.modulenews.application.NewsApplication;
 import com.custom.moduleregion.application.RegionApplication;
@@ -70,6 +71,7 @@ public class App extends BaseApplication implements ApplicationService {
 
     @Override
     public void init() {
+        HomeApplication.getInstance().init();
         IndexApplication.getInstance().init();
         NewsApplication.getInstance().init();
         RegionApplication.getInstance().init();
