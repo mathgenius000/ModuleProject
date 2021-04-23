@@ -20,6 +20,10 @@ android {
         if (!rootProject.isModule) {
             applicationId rootProject.appId.home
         }
+        //资源文件冲突解决
+//        if (rootProject.isModule) {
+//            resourcePrefix 'module_home_'
+//        }
 
         minSdkVersion config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
