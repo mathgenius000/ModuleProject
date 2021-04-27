@@ -89,11 +89,11 @@ dependencies {
         implementation project(path: ':moduleCore:moduleUser')
     }
     implementation project(path: ':modulePublic:moduleCommon')
-    implementation project(path: ':modulePublic:moduleRoute')
     implementation project(path: ':moduleSystem:moduleBase')
 
     implementation librarys.constraintlayout
     annotationProcessor librarys.butterknifeCompiler
+    implementation librarys.arouter
     annotationProcessor librarys.arouterCompiler
 }
 

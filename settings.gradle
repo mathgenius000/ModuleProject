@@ -8,6 +8,7 @@ include ':moduleCore:moduleUser'
 
 include ':modulePublic:moduleCommon'
 include ':modulePublic:moduleRoute'
+include ':modulePublic:moduleService'
 
 include ':moduleSystem:moduleBase'
 include ':moduleSystem:moduleHttp'

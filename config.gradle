@@ -34,6 +34,7 @@ ext {
                     moduleUser           : ':moduleCore:moduleUser',
                     moduleCommon         : ':modulePublic:moduleCommon',
                     moduleRoute          : ':modulePublic:moduleRoute',
+                    moduleService          : ':modulePublic:moduleService',
                     moduleBase           : ':moduleSystem:moduleBase',
                     moduleDatabase       : ':moduleSystem:moduleDatabase',
                     moduleHttp           : ':moduleSystem:moduleHttp',

@@ -9,4 +9,6 @@ public class RouteRegionPath {
 
     public static final String HOME_REGION_FRAGMENT = MODULE_NAME + "RegionFragment";
 
+    public static final String REGION_MODULE_SERVICE = MODULE_NAME + "RegionModuleService";
+
 }

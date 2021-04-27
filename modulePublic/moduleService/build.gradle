@@ -1,10 +1,4 @@
-//apply plugin: 'com.android.library'
-//根据isModule标签动态的切换 集成/组件模式
-if (!rootProject.isModule) {
-    apply plugin: 'com.android.application'
-} else {
-    apply plugin: 'com.android.library'
-}
+apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
 
 def config = rootProject.ext.android//配置
@@ -16,11 +10,6 @@ android {
 
     defaultConfig {
 
-        //组件模式下
-        if (!rootProject.isModule) {
-            applicationId rootProject.appId.news
-        }
-
         minSdkVersion config.minSdkVersion
         targetSdkVersion config.targetSdkVersion
         versionCode config.versionCode
@@ -29,23 +18,9 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
 
-        buildConfigField "boolean", "IS_MODULE", rootProject.isModule.toString()
-
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
-            }
-        }
-    }
-
-    //资源配置
-    sourceSets {
-        main {
-            //在组件模式下 使用不同的manifest文件
-            if (rootProject.isModule) {
-                manifest.srcFile 'src/main/module/AndroidManifest.xml'
-            } else {
-                manifest.srcFile 'src/main/AndroidManifest.xml'
             }
         }
     }
@@ -61,6 +36,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
 }
 
 dependencies {
@@ -72,12 +48,11 @@ dependencies {
     implementation librarys.supportv4
     implementation librarys.supportv7
     implementation librarys.design
-    implementation librarys.constraintlayout
 
     implementation project(path: ':moduleSystem:moduleBase')
-    implementation project(path: ':modulePublic:moduleCommon')
 
     annotationProcessor librarys.butterknifeCompiler
     implementation librarys.arouter
     annotationProcessor librarys.arouterCompiler
+    implementation librarys.eventbus
 }

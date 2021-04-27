@@ -39,6 +39,7 @@ dependencies {
 
     implementation project(path: ':moduleSystem:moduleBase')
     api project(path: ':modulePublic:moduleRoute')
+    api project(path: ':modulePublic:moduleService')
 
     annotationProcessor librarys.butterknifeCompiler
     annotationProcessor librarys.arouterCompiler
