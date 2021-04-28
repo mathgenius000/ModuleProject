@@ -1,8 +1,8 @@
-package com.custom.moduleservice.stub;
+package com.custom.moduleservice.proxy.stub;
 
-import com.custom.moduleservice.core.ServiceTarget;
+import com.custom.moduleservice.proxy.core.ServiceTarget;
 
-@ServiceTarget(value = "com.example.biz_login.moduleservice.LoginService")
+@ServiceTarget(value = "com.custom.moduleUser.login.LoginService")
 public interface LoginServiceStub {
 
     void login(String name, String password, LoginCallback callback);
@@ -20,6 +20,5 @@ public interface LoginServiceStub {
             this.result = result;
         }
     }
-
 
 }

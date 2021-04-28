@@ -1,4 +1,4 @@
-package com.custom.moduleservice.core;
+package com.custom.moduleservice.proxy.core;
 
 import android.content.Context;
 import android.content.res.AssetManager;

@@ -5,7 +5,7 @@ import android.util.Log;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.custom.moduleroute.RouteRegionPath;
-import com.custom.moduleservice.IRegionModuleService;
+import com.custom.moduleservice.route.IRegionModuleService;
 
 @Route(path = RouteRegionPath.REGION_MODULE_SERVICE)
 public class RegionModuleService implements IRegionModuleService {

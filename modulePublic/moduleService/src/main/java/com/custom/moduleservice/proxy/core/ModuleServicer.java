@@ -1,8 +1,7 @@
-package com.custom.moduleservice.core;
+package com.custom.moduleservice.proxy.core;
 
 import android.content.Context;
 import android.util.Log;
-
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationHandler;

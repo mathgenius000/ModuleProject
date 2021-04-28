@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <module-service>
+        <stub-class>com.custom.moduleservice.proxy.stub.LoginServiceStub</stub-class>
+        <target-class>com.custom.moduleUser.login.LoginService</target-class>
+    </module-service>
+</root>

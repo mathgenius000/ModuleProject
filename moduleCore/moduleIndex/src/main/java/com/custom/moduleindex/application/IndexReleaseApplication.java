@@ -4,6 +4,7 @@ import android.app.Application;
 import android.util.Log;
 
 import com.custom.modulebase.application.ApplicationService;
+import com.custom.moduleservice.proxy.core.ModuleServicer;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -53,5 +54,10 @@ public class IndexReleaseApplication implements ApplicationService {
     @Override
     public void init() {
         Log.d(TAG, "load IndexReleaseApplication");
+        initModuleService();
+    }
+
+    private void initModuleService() {
+        ModuleServicer.getDefault().init(getApplication(),"module-service.xml");
     }
 }

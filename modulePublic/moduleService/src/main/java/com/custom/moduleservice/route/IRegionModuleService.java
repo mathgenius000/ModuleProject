@@ -1,4 +1,4 @@
-package com.custom.moduleservice;
+package com.custom.moduleservice.route;
 
 import com.alibaba.android.arouter.facade.template.IProvider;
 

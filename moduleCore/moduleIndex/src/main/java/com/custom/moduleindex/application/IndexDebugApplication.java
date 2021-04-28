@@ -6,7 +6,7 @@ import android.util.Log;
 
 import com.custom.modulebase.application.ApplicationService;
 import com.custom.modulebase.application.BaseApplication;
-import com.custom.modulebase.base.BaseActivity;
+import com.custom.moduleservice.proxy.core.ModuleServicer;
 
 public class IndexDebugApplication extends BaseApplication implements ApplicationService {
 
@@ -25,13 +25,18 @@ public class IndexDebugApplication extends BaseApplication implements Applicatio
     }
 
     @Override
-    public void init() {
-        Log.d(TAG, "load IndexDebugApplication");
+    public Application getApplication() {
+        return getInstance();
     }
 
     @Override
-    public Application getApplication() {
-        return getInstance();
+    public void init() {
+        Log.d(TAG, "load IndexDebugApplication");
+        initModuleService();
+    }
+
+    private void initModuleService() {
+        ModuleServicer.getDefault().init(getApplication(),"module-service.xml");
     }
 
 }

@@ -5,20 +5,37 @@
     android:layout_height="match_parent"
     tools:context=".IndexActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_current_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:height="60dp"
+            android:text="获取当前位置" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="登陆" />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/tv_topic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:text="首页" />
-
-    <Button
-        android:id="@+id/btn_current_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_topic"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="30dp"
-        android:text="获取当前位置" />
 
 </RelativeLayout>

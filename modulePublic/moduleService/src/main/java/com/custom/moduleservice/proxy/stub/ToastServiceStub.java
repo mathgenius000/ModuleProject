@@ -1,4 +1,4 @@
-package com.custom.moduleservice.stub;
+package com.custom.moduleservice.proxy.stub;
 
 import android.content.Context;
 
