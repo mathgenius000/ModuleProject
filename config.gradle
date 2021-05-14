@@ -34,7 +34,7 @@ ext {
                     moduleUser           : ':moduleCore:moduleUser',
                     moduleCommon         : ':modulePublic:moduleCommon',
                     moduleRoute          : ':modulePublic:moduleRoute',
-                    moduleService          : ':modulePublic:moduleService',
+                    moduleService        : ':modulePublic:moduleService',
                     moduleBase           : ':moduleSystem:moduleBase',
                     moduleDatabase       : ':moduleSystem:moduleDatabase',
                     moduleHttp           : ':moduleSystem:moduleHttp',
@@ -81,7 +81,9 @@ ext {
             arouter              : 'com.alibaba:arouter-api:1.4.1',
             arouterCompiler      : 'com.alibaba:arouter-compiler:1.2.2',
 
-            eventbus             : 'org.greenrobot:eventbus:3.2.0'
+            eventbus             : 'org.greenrobot:eventbus:3.2.0',
+            liveEventBus         : 'com.jeremyliao:live-event-bus-x:1.7.3'
+
 
     ]
 }

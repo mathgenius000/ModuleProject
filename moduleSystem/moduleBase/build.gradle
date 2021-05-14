@@ -61,6 +61,7 @@ dependencies {
     //arouter
     api librarys.arouter
     annotationProcessor librarys.arouterCompiler
-    //eventbus
+
     api librarys.eventbus
+    api librarys.liveEventBus
 }
